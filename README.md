@@ -1,7 +1,7 @@
 # cs-3250-actions-demo
-## Step-by-step guide to cloning a repo, installing & running pytest, and setting up GitHub Actions for automated unit testing, linting, and formatting
+## Step-by-step guide to setting up GitHub Actions for automated unit testing, linting, and formatting
 
-### Clone the repo
+### Fork & clone the repo
 
 First, make sure you are signed in to GitHub. Fork this repo by visiting https://github.com/bednie/cs-3250-actions-demo/fork. Create a fork with yourself as the owner. 
 
