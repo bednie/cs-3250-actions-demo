@@ -13,19 +13,7 @@ Then select the local folder where you would like this repo to be located. It is
 
 Now you can open the repo and begin the next section of this demo. 
 
-### Install pytest
-
-To install pytest, open your terminal and run the command ```pip install -U pytest```, or follow the intructions here: https://docs.pytest.org/en/7.1.x/getting-started.html.
-
-### Run pytest 
-
-Now that you have installed pytest, run it using the command ```pytest```. There are many optional commands which you can see by running ```pytest --help```, but for this simple demo, pytest will automatically discover and run our tests (pytest will run all files that match the form "test_\*.py" or "\*_test.py"). 
-
-Upon running pytest, you should see some terminal output showing the results of the tests. 
-
-But what if we forget to run pytest, or a contributor merges code that hasn't been tested?
-
-### Automating unit tests
+### Automating unit tests & other actions
 
 We can automate unit tests, and even other actions like linting and formatting.
 
