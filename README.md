@@ -15,21 +15,17 @@ Now you can open the repo and begin the next section of this demo.
 
 ### Automating unit tests & other actions
 
-We can automate unit tests, and even other actions like linting and formatting.
+We can automate unit tests, and even other actions like linting and formatting. This is very helpful if we forget to run tests after making changes, or if we have a repo open to contributions from many people, or if we want to automate building, testing, and deploying our software, or--you get the idea. GitHub Actions is one way to do this. Actions has many pre-made templates, or you can set up an action with your own YAML configuration file (.yml).
 
-GitHub Actions is one way to do this. Actions has many templates, or you can set up an action with your own YAML script, the configuration file format that Actions uses.
-
-For this demo, you can download these two files by clicking the links and doing "Save as..." pytest.yml and ruff.yml,respectively: 
+For this demo, we will be using two YAML config files--one for unit tests (using pytest), and one for linting and formatting (using ruff). You may downloaded these files (right click and "Save as..." pytest.yml and ruff.yml,respectively), and use them as a starting point for your own Actions: 
 
 - [pytest.yml](https://gist.githubusercontent.com/bednie/bbf1418b5a5af15cfb0a548a4865cfec/raw/d68b6f0568532209ec35056cf01e9058955a92e8/pytest.yml)
 
 - [ruff.yml](https://gist.githubusercontent.com/bednie/7d2863227e4263b618eb91656681227d/raw/d1f1017a7dd73803de09198dc43855493b729ac5/ruff.yml)
+  
+These YAML files are also present in this repo. In the root of this demo repo, you will see a directory called ".github" (the "." is important so make sure to include it in your own repos. This folder will be hidden by default--make sure to set hidden folders to be visible on your machine), and then within .github/, you will see another directory called "workflows".
 
-Now that you have downloaded these files, we will need to put them in a special folder so that GitHub Actions knows where to find them. 
-
-In the root of this demo repo, you will see a directory called ".github" (the "." is important so make sure to include it in your own repos. Also, this folder will be hidden--make sure to set hidden folders to be visible on your machine), and then within .github/, you will see another directory called "workflows".
-
-Placing your YAML scripts in ./github/workflows/ allows Actions to discover and run them automatically. You will see pytest.yml and ruff.yml in ./github/workflows/, which you can use as a starting point for your own Actions. 
+Placing your YAML configs in ./github/workflows/ allows Actions to discover and run them automatically. 
 
 ### Running GitHub Actions
 
@@ -46,17 +42,17 @@ def test_false():
     assert False, "This will always fail"
 ```
 
-### Checking results of Actions runs 
+### Viewing results of Actions runs 
 
 When we attempt to push this code to our remote repo on GitHub, Actions will run the ruff linter & formatter as well as the unit tests.
 
 We can view past runs' results and re-run jobs here: https://github.com/{your_username}/cs-3250-actions-demo/actions
 
-A failed pytest run should be visible here if you merged in the failing test above.
+A failed pytest run should be visible here if you merged in the failing test above. 
 
 ### Next steps 
 
-This is just a demo: it is possible to add more Actions, and even disallow merges with failing tests, by editing the .yml files in ".github/workflows/".
+This is just a demo: try adding more Actions to automate the testing, building, and deployment of your work. 
 
 Add a workflow status [badge](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge).
 
