@@ -27,26 +27,24 @@ For this demo, you can download these two files by clicking the links and doing 
 
 Now that you have downloaded these files, we will need to put them in a special folder so that GitHub Actions knows where to find them. 
 
-In the root of this demo repo, create a directory called ".github" (the "." is important so make sure to include it. Also, this folder will be hidden--make sure to set hidden folders to be visible on your machine), and then within .github/, create another directory called "workflows".
+In the root of this demo repo, you will see a directory called ".github" (the "." is important so make sure to include it in your own repos. Also, this folder will be hidden--make sure to set hidden folders to be visible on your machine), and then within .github/, you will see another directory called "workflows".
 
-Move both pytest.yml and ruff.yml into workflows. 
+Placing your YAML scripts in ./github/workflows/ allows Actions to discover and run them automatically. You will see pytest.yml and ruff.yml in ./github/workflows/, which you can use as a starting point for your own Actions. 
 
 ### Running GitHub Actions
 
-First, we will need to push the changes we made in the repo--which is a local repo on your machine--to GitHub.com. GitHub we be our remote repo. You can do this by running the command "git push origin main" in your terminal. 
+In order for the Actions to run, we need to set the repos permissions. Go to https://github.com/{your_username}/cs-3250-actions-demo/settings/actions and update the Workflow Permissions at the bottom of the page to allow "Read and write permissions" as well as "Allow GitHub Actions to create and approve pull requests". See the screenshot below:
 
-Now, whenever we merge code into this repo (whether by pull request or pushing), these Actions will run on the repo. 
+![workflow-permissions.png](/workflow_permissions.png)
 
-Once you have pushed this demo repo to your GitHub account, add a failing unit test to "test_demo_functions.py", and then merge in these changes, too:
+Now, when we push changes to the repo, the Actions will run. 
+
+To make sure the Actions are actually doing something, let's add a failing test. In ```test_demo_functions.py```, you will see a commented-out unit test. Remove the #s to activate this test, and then push the changes to your remote GitHub repo:
 
 ```
 def test_false():
     assert False, "This will always fail"
 ```
-
-Finally, go to https://github.com/{your_username}/cs-3250-actions-demo/settings/actions and update the Workflow Permissions at the bottom of the page to allow "Read and write permissions" as well as "Allow GitHub Actions to create and approve pull requests". See the screenshot below:
-
-![workflow-permissions.png](/workflow_permissions.png)
 
 ### Checking results of Actions runs 
 
