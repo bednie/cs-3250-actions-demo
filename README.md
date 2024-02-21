@@ -15,7 +15,7 @@ Now you can open the repo and begin the next section of this demo.
 
 ### Automating unit tests & other actions
 
-We can automate unit tests, and even other actions like linting and formatting. This is very helpful if we forget to run tests after making changes, or if we have a repo open to contributions from many people, or if we want to automate building, testing, and deploying our software, or--you get the idea. GitHub Actions is one way to do this. Actions has many pre-made templates, or you can set up an action with your own YAML configuration file (.yml).
+We can automate unit tests, and even other actions like linting and formatting. This is very helpful if we forget to run tests after making changes, or if we have a repo open to contributions from many people, or if we want to automate building, testing, and deploying our software, or--you get the idea. GitHub Actions is one way to do this. Actions has many pre-made templates, or you can set up an action (or "workflow") with your own YAML configuration file (.yml). 
 
 For this demo, we will be using two YAML config files--one for unit tests (using pytest), and one for linting and formatting (using ruff). You may downloaded these files (right click and "Save as..." pytest.yml and ruff.yml,respectively), and use them as a starting point for your own Actions: 
 
