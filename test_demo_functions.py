@@ -13,5 +13,5 @@ def test_multiply():
     assert multiply(-1, 1) == -1, "Should be -1"
     assert multiply(-1, -1) == 1, "Should be 1"
 
-#def test_false():
-    #assert False, "This will always fail"
+def test_false():
+    assert False, "This will always fail"
